@@ -33,5 +33,5 @@ jobs:
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
-          glcoud container clusters get-credentials autopilot-cluster-1 --region europe-west9
+          gcloud container clusters get-credentials autopilot-cluster-1 --region europe-west9
           helm upgrade --install --recreate-pods reverse-ip-app --namespace reverse-ip-app --create-namespace ./helm
