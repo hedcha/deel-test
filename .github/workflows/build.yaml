@@ -19,8 +19,6 @@ jobs:
           project_id: ${{ secrets.GOOGLE_PROJECT }}
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           export_default_credentials: true
-        run: |
-          gcloud components install gke-gcloud-auth-plugin
 
       - name: build and push the docker image
         env:
@@ -34,5 +32,6 @@ jobs:
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
+          gcloud components install gke-gcloud-auth-plugin
           gcloud container clusters get-credentials autopilot-cluster-1 --region europe-west9
           helm upgrade --install --recreate-pods reverse-ip-app --namespace reverse-ip-app --create-namespace ./helm
