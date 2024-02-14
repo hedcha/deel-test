@@ -24,6 +24,6 @@ jobs:
         env:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
-          gcloud auth configure-docker europ-west9-docker.pkg.dev
+          gcloud auth configure-docker europe-west9-docker.pkg.dev
           docker build -t europe-west9-docker.pkg.dev/$GOOGLE_PROJECT/reverse-ip/reverse-ip-app:latest .
           docker push europe-west9-docker.pkg.dev/$GOOGLE_PROJECT/reverse-ip/reverse-ip-app:latest
