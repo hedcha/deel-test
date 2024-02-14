@@ -8,7 +8,7 @@ image:
   repository: europe-west9-docker.pkg.dev/deel-test-414208/reverse-ip/reverse-ip-app:latest
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  #tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
